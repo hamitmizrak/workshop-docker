@@ -15,6 +15,13 @@
 # Step-6: docker push javahamitmizrak/oluşturulmuşRepositoryAdi
 
 ######################################################################
+
+# Multi-Stage Build 
+# @@@@@@@@@@@
+
+
+
+
 # Nginx Image
 FROM nginx:latest
 
