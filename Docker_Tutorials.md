@@ -1,6 +1,14 @@
 # Docker Tutorials
-[GitHub Link]()
+[Docker](https://www.docker.com/)
+[DockerHub](https://hub.docker.com/)
+[GitHub Link](https://github.com/hamitmizrak/workshop-docker)
+
+
 ---
+
+14 Ağustos Çarşamba  09:00-13:00
+19 Ağustos Pazartesi 09:00-12:00
+21 Ağustos Çarşamba  09:00-12:00
 
 ```sh
 docker --version
@@ -8,6 +16,176 @@ docker -v
 docker info
 ```
 ---
+- Bare Metal
+- Virtual Machine
+- Containerization
+- Docker: gemi limanlarında gemilere yük bindiren ve boşaltan işcilere denir.
+- Linux Kernel'e 2008 yılında eklendi ve LXC(LinuX Containers) bu teknoloji üzerine kuruludur.
+- docker 2008 yılında Solomon Hykes
+- Open source (Açık kaynak kodludur)
+- şirket ilk adı: DotCloud
+- şirket şimdiki adı: Docker.INC
+- Go diliyle yazıldı.
+- Docker aynı işletim sitemi üzerinde birbirinden bağımsız ve izole container oluşturmamızı destekler
+- build, deploy
+- docker: Hızlı derleme, test için, dağıtım, ölçeklendirmeyi sağlar.
+- dockerhub
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ---
 **docker info**
