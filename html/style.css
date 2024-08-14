@@ -1,0 +1,10 @@
+.custom_parag {
+    padding: 0.5rem 2rem;
+    text-align: justify;
+}
+
+.custom_parag:hover {
+    opacity: 0.8;
+    text-shadow: 0.1 0.1 rgba(0, 0, 0, .8);
+
+}
