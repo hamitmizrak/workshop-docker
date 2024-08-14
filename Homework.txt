@@ -1,0 +1,11 @@
+maven nedir ?
+docker bileşenleri yazınız ? 
+WSL (Windows Subsystem For Linux)
+Alpine
+docker --version
+docker -v 
+docker version
+
+mvn clean install -DskipTests
+docker-compose up
+docker-compose up -d

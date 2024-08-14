@@ -21,7 +21,7 @@ docker info
 - Containerization
 - Docker: gemi limanlarında gemilere yük bindiren ve boşaltan işcilere denir.
 - Linux Kernel'e 2008 yılında eklendi ve LXC(LinuX Containers) bu teknoloji üzerine kuruludur.
-- docker 2008 yılında Solomon Hykes
+- docker 2008 yılında Solomon Hykes Go diliyle yazılmış.
 - Open source (Açık kaynak kodludur)
 - şirket ilk adı: DotCloud
 - şirket şimdiki adı: Docker.INC
@@ -29,8 +29,23 @@ docker info
 - Docker aynı işletim sitemi üzerinde birbirinden bağımsız ve izole container oluşturmamızı destekler
 - build, deploy
 - docker: Hızlı derleme, test için, dağıtım, ölçeklendirmeyi sağlar.
-- dockerhub
+- dockerhub: docker imagelarının saklandığı yerdir.
+- 2015 yılında Docker Swarm eklenmiştir.
+- Farklı işletim sistemlerinde çalışıyor(Cross Platform)
+- Docker CE (Ücretsiz)
+- Docker EE (Ücretli)
+---
 
+DockerHub: docker imagelarımızı sakladığımız yer
+Image: Bütün ayarları yapılmış çalışmayı beklenen docker objesidir.
+Container:Imageların çalıştığı yerdir.
+
+Dockerfile:image oluşturmak için kullanırız. (docker build -t imageName .)
+docker-compose:Birden fazla servisin yönetildiği yerdir (docker-compose up -d)
+volume: Docker verilerinin kalıcılığı için kullanılır.
+swarm:docker orchestration(ölçeklendirme)
+network: farklı containerlerimizin birbiriyle bağlantı kurduğu alandır.
+dockerize: Bir projeyi docker üzerinden koşturmak demektir.
 
 
 
