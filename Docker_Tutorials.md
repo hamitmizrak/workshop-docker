@@ -47,7 +47,12 @@ swarm:docker orchestration(ölçeklendirme)
 network: farklı containerlerimizin birbiriyle bağlantı kurduğu alandır.
 dockerize: Bir projeyi docker üzerinden koşturmak demektir.
 
-
+---
+Port
+65536 port
+0<=PORT<=1023
+1024<=PORT<= 49151
+49152<=PORT<=65535
 
 
 

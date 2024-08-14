@@ -1,0 +1,27 @@
+
+docker run hello-world
+docker container run hello-world
+
+--------------------------------
+docker pull nginx
+docker pull mysql
+docker pull httpd
+docker pull alpine
+docker pull ubuntu
+docker pull centos
+--------------------------------
+docker search nginx
+docker pull nginx
+docker container run --publish 1111:80 nginx
+docker container run --publish 2222:80 --name hamit nginx
+docker container run --publish 3333:80 --name hamit2 --detach nginx
+docker container run -p 4444:80 --name hamit3 -d nginx
+docker container run -p 5555:80 --name hamit4 -d nginx:latest
+docker container run -p 6666:80 --name hamit5 -d nginx:1.15
+
+
+--------------------------------
+docker search nginx
+docker pull nginx
+docker container run -p 6666:80 --name hamit5 -d nginx
+curl localhost:6666
