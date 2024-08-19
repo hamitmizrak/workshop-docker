@@ -17,7 +17,7 @@ docker pull httpd
 docker pull alpine
 docker pull ubuntu
 docker pull centos
---------------------------------
+-----------------------------------------------------------------------------------------------
 Alpine: Minimalist ve güvenli bir linux dağıtımıdır. 
 Alpine Linux küçük boyutlu, hızlı ve güvenli bir işletim sistemi bizlere sunar
 Alpine Özellikleri
@@ -27,8 +27,37 @@ Alpine Özellikleri
 4-) Konteyner desteği: Docker konteylerın imaj desteği vardır.
 5-) Topluluk Desteğinin sağlanması.
 
+-----------------------------------------------------------------------------------------------
+YAML (YAML Ain't Markup  Language) yapılandırma dosyalarında sıklıkla kullanırız.
+JSON, XML  bunlara alternatif olarak yml kullanırız.
+Örneğin: docker-compose.yml , gitlab-ci.yml, application.yml
+Veri serileştirmede, okunabilinirliği çok sade bir görüntüsü vardır.
 
---------------------------------
+1-) user friendly (İnsan dostu) : 
+- insanların kolaylıkla okuyup anlaması demektir.
+
+2-) Girintileme özelliği : Hiyerarşik yapıları temsil etmek için girintileme kullanılır.
+NOT: Girintilemede iki veya dört boşlukla gösteririz.
+  2 tane boşluk
+  tab
+  
+3-) Veri Türleri (Data Type)
+- Basit veri türlerine sahiptir. 
+- string(dize)
+- integer(tam sayı)
+- float(ondalıklı sayılar)
+- boolean(true, false)
+- listeler (diziler)
+- haritalar(map) eşleme: key-value
+
+4-) Yorumlama
+- # ile single comment yazarız.
+
+
+
+
+
+-----------------------------------------------------------------------------------------------
 docker search nginx
 docker pull nginx
 docker container run --publish 1111:80 nginx
@@ -38,14 +67,14 @@ docker container run -p 4444:80 --name hamit3 -d nginx
 docker container run -p 5555:80 --name hamit4 -d nginx:latest
 docker container run -p 6666:80 --name hamit5 -d nginx:1.15
 
---------------------------------
+-----------------------------------------------------------------------------------------------
 docker search nginx
 docker pull nginx
 docker container run -p 6666:80 --name hamit5 -d nginx
 curl localhost:6666
 
 
---------------------------------
+-----------------------------------------------------------------------------------------------
 # CONTAINER
 docker container --help
 docker ps 
