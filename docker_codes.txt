@@ -17,6 +17,15 @@ docker pull httpd
 docker pull alpine
 docker pull ubuntu
 docker pull centos
+--------------------------------
+Alpine: Minimalist ve güvenli bir linux dağıtımıdır. 
+Alpine Linux küçük boyutlu, hızlı ve güvenli bir işletim sistemi bizlere sunar
+Alpine Özellikleri
+1-) Küçük Boyut : Oldukça küçük boyutlu ve 5MB yer kaplar yani minumal oalrak gerekli olan en küçük boyuta sahiptir.
+2-) Güvenli : kernal(Çekirdek) işletim sistemi çekirdek kısmını sürekli güncel tutart.
+3-) Paket Yönetim : apk (Alpine Package Keeper) paket yönetim sistemi vardır. Apk paketleri yönetmek için hızlı ve basit bir yoldur.
+4-) Konteyner desteği: Docker konteylerın imaj desteği vardır.
+5-) Topluluk Desteğinin sağlanması.
 
 
 --------------------------------
