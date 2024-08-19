@@ -19,9 +19,6 @@
 # Multi-Stage Build 
 # @@@@@@@@@@@
 
-
-
-
 # Nginx Image
 FROM nginx:latest
 

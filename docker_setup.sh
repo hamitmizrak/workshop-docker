@@ -8,6 +8,8 @@ DELETE="Silme"
 UPDATE="Güncelleme"
 CLEANER="Temizleme"
 INSTALL="Yükleme"
+START="Başlıyor"
+STOP="Durduruluyor"
 
 #####################################################################################################
 #####################################################################################################
@@ -16,37 +18,54 @@ chmod +x docker_setup.sh
 chmod +x countdown.sh
 chmod +x reboot.sh
 
+#####################################################################################################
+#####################################################################################################
+# GENEL FUNCTION
+
+# Port aktifleştir
+theFirewallInstall(){
+
+}
+theFirewallInstall
 
 
+# Bilgi
+information(){
+
+}
 
 
+# Temizleme
+clean(){
+
+}
 
 
+#####################################################################################################
+#####################################################################################################
+# Dockerfile & Docker Compose
 
+# Dockerfile
+dockerFile() {
+    sleep 2
+    echo -e "\nDockerfile ${START}"
+    read -p "Dockerfile image başlanmasını istiyor [e/h]: " dockerFileResult
+    if [[ $dockerFileResult == "e" || $dockerFileResult == "E"  ]]; then
+        echo -e "\nDockerfile'a image ${CREATE}..."
 
+        # Geriye Say
+        ./countdown.sh
 
+        # Dockerfile build
+        docker image build -t nginx_image .
+}
+dockerFile
 
+# docker-compose.yml
+dockerComposeYml() {
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+}
+dockerComposeYml
 
 # Docker Info
 docker --version
