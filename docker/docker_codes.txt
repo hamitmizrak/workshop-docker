@@ -54,9 +54,6 @@ NOT: Girintilemede iki veya dört boşlukla gösteririz.
 - # ile single comment yazarız.
 
 
-
-
-
 -----------------------------------------------------------------------------------------------
 docker search nginx
 docker pull nginx

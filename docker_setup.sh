@@ -290,7 +290,7 @@ install
 docker_pulling() {
     sleep 2
     echo -e "\nDockerpulling ${START}"
-    read -p "Dockerpulling istiyor musunuz ? [e/h]: " dockerPullingResult
+    read -p "Docker pulling istiyor musunuz ? [e/h]: " dockerPullingResult
     if [[ $dockerPullingResult == "e" || $dockerPullingResult == "E" ]]; then
         echo -e "\nDocker pulling ${CREATE}..."
 
@@ -317,7 +317,7 @@ docker_pulling() {
         docker pull ubuntu
         docker pull centos
     else
-        echo -e "Dockerfile çalışmadı"
+        echo -e "Docker pulling çalışmadı"
     fi
 }
 docker_pulling
@@ -337,6 +337,9 @@ docker_file() {
 
         # Dockerfile build
         docker image build -t nginx_image .
+
+        # docker
+        docker container run -d -p 2222:80 nginx_image
     else
         echo -e "Dockerfile çalışmadı"
     fi
@@ -357,8 +360,8 @@ docker_compose_yml() {
         ./countdown.sh
 
         # Dockerfile build
-        #docke-compose up
-        docke-compose up -d
+        #docker-compose up
+        docker-compose up -d
     else
         echo -e "Docker Compose çalışmadı"
     fi
