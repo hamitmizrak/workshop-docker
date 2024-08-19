@@ -9,12 +9,15 @@ docker run hello-world
 docker container run hello-world
 
 --------------------------------
+docker search nginx
+docker pull nginx
 docker pull nginx
 docker pull mysql
 docker pull httpd
 docker pull alpine
 docker pull ubuntu
 docker pull centos
+
 
 --------------------------------
 docker search nginx
