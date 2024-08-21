@@ -359,50 +359,6 @@ docker_file
 
 #####################################################################################################
 #####################################################################################################
-# Dockerfile
-docker_file_information() {
-    sleep 2
-    echo -e "\nDockerfile ${START}"
-    read -p "Dockerfile image bilgilerini görmek ister misiniz ?  [e/h]: " dockerFileImageInformationResult
-    if [[ $dockerFileImageInformationResult == "e" || $dockerFileImageInformationResult == "E" ]]; then
-        echo -e "\nDockerfile'a image ${INFORMATION}..."
-
-        # Geriye Say
-        ./countdown.sh
-
-        docker login
-
-        # Docker containerleri göster
-        ./countdown.sh
-        echo -e "Docker Imajları"
-        docker ps
-
-        # Docker inspect
-         ./countdown.sh
-
-        # Docker top
-         ./countdown.sh
-
-
-          # Docker stat
-         ./countdown.sh
-
-
-          # Docker Log
-         ./countdown.sh
-
-        # Docker Terminal Bağlan
-        ./countdown.sh
-        echo -e "Docker Imajına Terminaller bağlan"
-        docker container exec -it nginx_image bash
-    else
-        echo -e "Dockerfile çalışmadı"
-    fi
-}
-docker_file_information
-
-#####################################################################################################
-#####################################################################################################
 # Docker Compose (docker-compose.yml)
 docker_compose_yml() {
     sleep 2
@@ -422,6 +378,82 @@ docker_compose_yml() {
     fi
 }
 docker_compose_yml
+
+#####################################################################################################
+#####################################################################################################
+# Dockerfile Information
+docker_file_information() {
+    sleep 2
+    echo -e "\nDocker Information ${START}"
+    read -p "Docker Information bilgilerini görmek ister misiniz ?  [e/h]: " dockerFileImageInformationResult
+    if [[ $dockerFileImageInformationResult == "e" || $dockerFileImageInformationResult == "E" ]]; then
+        echo -e "\nDockerfile'a Container ${INFORMATION}..."
+
+        # ;Docker Login
+        ./countdown.sh
+        docker login
+        docker version
+         docker info
+
+        # Docker containerleri göster
+        ./countdown.sh
+        echo -e "Docker Container"
+        docker ps
+        docker container ls
+        docker container ls -a
+
+        # DockerNetwork
+         ./countdown.sh
+         echo -e "Docker Network"
+         docker network ls
+
+         # Docker containerleri göster
+         ./countdown.sh
+         echo -e "Docker Stop/Start"
+         docker stop nginx_image
+         docker start nginx_image
+
+         # Docker top
+         # işlem kimliği,PID,CPU kullanımı
+        ./countdown.sh
+        echo -e "Docker Top"
+        docker top nginx_image
+
+        # Docker inspect
+        # Ağ bilgileri, volümler vs bilgileri içerir.
+         echo -e "Docker inspect"
+         ./countdown.sh
+         docker inspect nginx_image
+
+          # Docker stats
+          # Bellek kullanımı, performans metriklerini
+         ./countdown.sh
+         docker stats nginx_image
+
+          # Docker Log
+         ./countdown.sh
+         docker logs nginx_image
+
+          # Docker containerleri Silmek
+         ./countdown.sh
+         echo -e "Docker Prune"
+         docker container prune
+
+        # Docker Terminal Bağlan
+        ./countdown.sh
+        echo -e "Docker Imajına Terminaller bağlan"
+        docker ps
+        #docker container exec -it containerID bash
+        #docker container exec -it containerNAME bash
+        winpty docker container exec -it nginx_container bash
+        ls -al
+    else
+        echo -e "Dockerfile çalışmadı"
+    fi
+}
+docker_file_information
+
+
 
 #####################################################################################################
 #####################################################################################################
