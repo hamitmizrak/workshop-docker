@@ -17,16 +17,22 @@
 
 #######################################################################################################################
 #######################################################################################################################
+
+# Docker compose dosyasının sürüm numarasını gösterir
 version: '3.1'
 
-# Services
+# Services: Docker Compose ile çalışacak hizmetleri tanımlar
 services:
   # nginx Service
   nginx_service:
     container_name: nginx_container
     image: nginx_image
     restart: on-failure
-    build: .
+    build: . # Dockerfile defaulttaki ismiyle  çalıştırsın
+    # Eğer Dockerfile default ismiyle gelmiyorsa
+    #build:
+      #context: .
+      #dockerfile: NginxDockerfile
     ports:
       - "1111:80"
     networks:

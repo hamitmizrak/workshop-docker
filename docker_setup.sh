@@ -339,17 +339,67 @@ docker_file() {
         # Geriye Say
         ./countdown.sh
 
+        docker login
+
         # Dockerfile build
         docker image build -t nginx_image .
 
         # docker
         #docker container run -d  -p 2222:80 --rm  --name my_nginx_dockerfile nginx:alpine
         docker container run -d  -p 2222:80 --rm  --name my_nginx_dockerfile nginx_image
+
+        # Docker Codes
+        docker ps
+        docker container exec -it nginx_image bash
     else
         echo -e "Dockerfile çalışmadı"
     fi
 }
 docker_file
+
+#####################################################################################################
+#####################################################################################################
+# Dockerfile
+docker_file_information() {
+    sleep 2
+    echo -e "\nDockerfile ${START}"
+    read -p "Dockerfile image bilgilerini görmek ister misiniz ?  [e/h]: " dockerFileImageInformationResult
+    if [[ $dockerFileImageInformationResult == "e" || $dockerFileImageInformationResult == "E" ]]; then
+        echo -e "\nDockerfile'a image ${INFORMATION}..."
+
+        # Geriye Say
+        ./countdown.sh
+
+        docker login
+
+        # Docker containerleri göster
+        ./countdown.sh
+        echo -e "Docker Imajları"
+        docker ps
+
+        # Docker inspect
+         ./countdown.sh
+
+        # Docker top
+         ./countdown.sh
+
+
+          # Docker stat
+         ./countdown.sh
+
+
+          # Docker Log
+         ./countdown.sh
+
+        # Docker Terminal Bağlan
+        ./countdown.sh
+        echo -e "Docker Imajına Terminaller bağlan"
+        docker container exec -it nginx_image bash
+    else
+        echo -e "Dockerfile çalışmadı"
+    fi
+}
+docker_file_information
 
 #####################################################################################################
 #####################################################################################################

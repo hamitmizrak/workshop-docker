@@ -53,6 +53,7 @@ RUN echo "URL: http//$NGINX_HOST:$NGINX_PORT"
 # WORKDIR /var/www/html
 # RUN mkdir -p html
 
+
 # Log Veri Sakla
 VOLUME ["/var/log/nginx"]
 
