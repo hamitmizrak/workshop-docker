@@ -1,2 +1,2 @@
 // Alert
-window.alert('Hello, World!');
+window.alert('Merhabalar, Nginx!');

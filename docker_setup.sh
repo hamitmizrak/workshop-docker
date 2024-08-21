@@ -1,3 +1,6 @@
+
+# Shebang (#!/bin/bash): Betiğin Bash kabuğu ile çalışacağını gösterir.
+# İşletim sistemine Bash betiğinin çalışacağını söyler
 #!/bin/bash
 echo "Docker Kurulumlar"
 
@@ -15,6 +18,8 @@ INFORMATION="Genel Bilgiler Ports | NETWORKING"
 UFW="Uncomplicated Firewall Ggüvenlik duvarı Yöentim Araçı"
 LOGOUT="Sistemi Tekrar Başlatmak"
 
+# ÖNEMLİ NOT: eğer windows üzerinden çalıştırıyorsanız sudo tanımayacaktır.
+# ÖNEMLİ NOT: nginx eğer browserda istediğiniz sonuç çıkmazsa browserin cache belleğini temizleyiniz. yoksa nginx'in kendi sayfasını görürüsünüz.
 #####################################################################################################
 #####################################################################################################
 # Bashscriptlere İzin Vermemiz
@@ -45,7 +50,7 @@ updated() {
             ./countdown.sh
 
             # Güncelle
-            sudo apt-get update
+             apt-get update
         else
             echo -e "Sistemin Listesini Güncellenemesi yapılmadı"
         fi
@@ -55,7 +60,7 @@ updated() {
         if [[ $systemListUpdatedResult == "e" || $systemListUpdatedResult == "E" ]]; then
             echo -e "Sistem Paket Güncellenmesi Başladı ..."
             ./countdown.sh
-            sudo apt-get update && sudo apt-get upgrade -y
+             apt-get update &&  apt-get upgrade -y
         else
             echo -e "Sistem Paket Güncellenmesi Yapılmadı... "
         fi
@@ -68,9 +73,9 @@ updated() {
             # Geriye Say
             ./countdown.sh
 
-            sudo apt-get update && sudo apt-get upgrade -y && sudo apt-get dist-upgrade -y
+             apt-get update &&  apt-get upgrade -y &&  apt-get dist-upgrade -y
             # Çekirdek(Kernel) güncellemelerinde yeniden başlamak gerekebilir
-            sudo apt list --upgradable | grep linux-image
+             apt list --upgradable | grep linux-image
         else
             echo -e "Kernel Güncellemesi Yapılmadı... "
         fi
@@ -96,7 +101,7 @@ logout() {
         ./countdown.sh
 
         #Güncelle
-        sudo apt update
+         apt update
 
         # Temizleme Fonkisyonunu çağırsın
         clean
@@ -126,38 +131,38 @@ theFirewallInstall() {
         sleep 3
         echo -e "######### UFW (Uncomplicated Firewall) #########\n"
         # UFW kurulumu
-        sudo apt install ufw -y
+         apt install ufw -y
 
         # UFW Status
-        sudo ufw status
+         ufw status
 
         # Varsayılan Giden Trafik Kurallarını Belirlemek(Dış dünyayay yapılan bağlantıların varsayılan olarak izin verildiği anlamına gelir)
         # Tüm Giden Trafiğe İzin Ver
-        sudo ufw default allow outgoing
+         ufw default allow outgoing
 
         # Ssh(Secure Shell) trafiğine izin verir. Bağlantılara izin vermek
-        sudo ufw allow ssh
-        sudo ufw allow 22
-        sudo ufw allow 80
-        sudo ufw allow 443
-        sudo ufw allow 1111 # Docker Apache Tomcat
-        sudo ufw allow 2222 # docker portainer
-        sudo ufw allow 3333 # Jenkins
-        sudo ufw allow 4444 # Ubuntu Tomcat
-        sudo ufw allow 8000 # docker portainer
-        sudo ufw allow 3306 # mysql
-        sudo ufw allow 5432 # Postgresql
-        sudo ufw allow 8080 # Nginx
-        sudo ufw allow 9000 # SonarQube
-        sudo ufw allow 9090
+         ufw allow ssh
+         ufw allow 22
+         ufw allow 80
+         ufw allow 443
+         ufw allow 1111 # Docker Apache Tomcat
+         ufw allow 2222 # docker portainer
+         ufw allow 3333 # Jenkins
+         ufw allow 4444 # Ubuntu Tomcat
+         ufw allow 8000 # docker portainer
+         ufw allow 3306 # mysql
+         ufw allow 5432 # Postgresql
+         ufw allow 8080 # Nginx
+         ufw allow 9000 # SonarQube
+         ufw allow 9090
         # IP: 127.0.0.1 DNS: localhost
-        sudo ufw allow from 127.0.0.1 to any port 8080
+         ufw allow from 127.0.0.1 to any port 8080
 
         # UFW Etkinleştirme
-        sudo ufw enable
+         ufw enable
 
         # UFW Status
-        sudo ufw status
+         ufw status
     else
         echo -e "Güvenlik Duvarı Açılmadı... "
     fi
@@ -183,33 +188,33 @@ theFirewallDelete() {
         sleep 3
         echo -e "######### UFW (Uncomplicated Firewall) #########\n"
         # UFW Status
-        sudo ufw status
+         ufw status
 
         # Varsayılarn Gelen Trafik Kurallarını belirleme(Güvenliği artırmak için gelen bağlantıları varsayılan olarak reddeder yalnızca belirlenen bağlantılara izin verir)
         # Tüm Gelen Trafiği Engelle
-        sudo ufw default deny incoming
+         ufw default deny incoming
 
         # Ssh(Secure Shell) trafiğine izin verir. Bağlantılara izin vermek
-        sudo ufw delete allow ssh
-        sudo ufw delete allow 22
-        sudo ufw delete allow 80
-        sudo ufw delete allow 443
-        sudo ufw delete allow 1111
-        sudo ufw delete allow 2222
-        sudo ufw delete allow 3333
-        sudo ufw delete allow 3306
-        sudo ufw delete allow 5432
-        sudo ufw delete allow 8080
-        sudo ufw delete allow 9000
-        sudo ufw delete allow 9090
+         ufw delete allow ssh
+         ufw delete allow 22
+         ufw delete allow 80
+         ufw delete allow 443
+         ufw delete allow 1111
+         ufw delete allow 2222
+         ufw delete allow 3333
+         ufw delete allow 3306
+         ufw delete allow 5432
+         ufw delete allow 8080
+         ufw delete allow 9000
+         ufw delete allow 9090
         # IP: 127.0.0.1 DNS: localhost
-        sudo ufw delete allow from 127.0.0.1 to any port 8080
+         ufw delete allow from 127.0.0.1 to any port 8080
 
         # UFW Devre Dışı Bırak
-        sudo ufw disable
+         ufw disable
 
         # UFW Status
-        sudo ufw status
+         ufw status
     else
         echo -e "Güvenlik Duvarı Ayarları Kapatılmadı .... "
     fi
@@ -230,10 +235,10 @@ clean() {
         ./countdown.sh
 
         echo -e "######### Clean #########\n"
-        sudo apt-get autoremove -y
-        sudo apt autoclean
+         apt-get autoremove -y
+         apt autoclean
         echo -e "Kırık Bağımlılıkları Yükle ..."
-        sudo apt install -f
+         apt install -f
     else
         echo -e "Temizleme Yapılmadı..."
     fi
@@ -255,19 +260,19 @@ install() {
 
         echo -e "Bulunduğum dizin => $(pwd)\n"
         sleep 1
-        sudo apt-get install vim -y
+         apt-get install vim -y
         sleep 1
-        sudo apt-get install rar -y
+         apt-get install rar -y
         sleep 1
-        sudo apt-get install unrar -y
+         apt-get install unrar -y
         sleep
-        sudo apt-get install curl -y
+         apt-get install curl -y
         sleep 1
-        sudo apt-get install openssh-server -y
+         apt-get install openssh-server -y
         sleep 1
 
         # build-essential: Temel Geliştirme araçları içeren meta-pakettir
-        sudo apt install build-essential wget zip unzip -y
+         apt install build-essential wget zip unzip -y
 
         # Firewall Install Function
         theFirewallInstall
@@ -289,7 +294,7 @@ install
 # Docker Pulling
 docker_pulling() {
     sleep 2
-    echo -e "\nDockerpulling ${START}"
+    echo -e "\nDocker pulling ${START}"
     read -p "Docker pulling istiyor musunuz ? [e/h]: " dockerPullingResult
     if [[ $dockerPullingResult == "e" || $dockerPullingResult == "E" ]]; then
         echo -e "\nDocker pulling ${CREATE}..."
@@ -308,9 +313,8 @@ docker_pulling() {
         docker container run hello-world
 
         #--------------------------------
-        docker search nginx
-        docker pull nginx
-        docker pull nginx
+        #docker search nginx
+        #docker pull nginx
         docker pull mysql
         docker pull httpd
         docker pull alpine
@@ -339,7 +343,8 @@ docker_file() {
         docker image build -t nginx_image .
 
         # docker
-        docker container run -d -p 2222:80 nginx_image
+        #docker container run -d  -p 2222:80 --rm  --name my_nginx_dockerfile nginx:alpine
+        docker container run -d  -p 2222:80 --rm  --name my_nginx_dockerfile nginx_image
     else
         echo -e "Dockerfile çalışmadı"
     fi
@@ -399,9 +404,9 @@ dependency() {
     # parametre - arguman
     local packagename=$1
     #
-    sudo apt-get check
-    sudo apt-cache depends $packagename
-    sudo apt-get install $packagename
+     apt-get check
+     apt-cache depends $packagename
+     apt-get install $packagename
 }
 check_package
 
@@ -441,7 +446,7 @@ information() {
         # Geriye Say
         ./countdown.sh
 
-        #sudo su
+        # su
         echo -e "Ben Kimim => $(whoami)\n"
         sleep 1
         echo -e "Ağ Bilgisi => $(ifconfig)\n"
